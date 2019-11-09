@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sweetalert</title>
+	
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+	<script src="jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="animate.css">
+
+
+	<script>
+	$(document).ready(function(){
+	$("#pop").click(function(){
+
+Swal.fire({
+  title: 'Hello',
+  html:'<span class="text-white">I am Sanket</span> ',
+  type:'success',
+  footer:'<a href="http://google.com">it`s Me</a>',
+  showConfirmButton:false,
+  showCloseButton:true,
+  showCancelButton:true,
+  cancelButtonColor:'red',
+  cancelButtonText:'Hi',
+  buttonstyling:false,
+  position:'top',
+  timer:10000,
+  animation: false,
+  imageUrl:'E:/Server/htdocs/bala.jpg',
+  imageWidth:400,
+  imageHeight:200,
+  width: 1000,
+  padding: '3em',
+  background: 'linear-gradient(to left,violet,cyan)',
+  backdrop:'linear-gradient(to right,violet,cyan)' ,
+  input:'email',
+  inputPlaceholder:'Enter your Email ',
+  allowOutsideClick:false,
+  allowEscapeKey:false,
+  allowEnterKey:false,
+  closeButtonHtml:'<span>close</span>',
+  customClass: {
+    popup: 'animated bounceIn',
+    cancelButton:'btn btn-lg',
+    image:'img swing animated',
+    closeButton:'w-25'
+  }
+
+  
+})
+
+});
+});
+</script>
+</head>
+
+<body>
+  <div class="text-center pt-5 mt-5">
+	<button id="pop" class="bg-warning btn-lg ">about me</button>
+</div>
+
+</body>
+</html>

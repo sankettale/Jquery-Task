@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>swal</title>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+	<script src="jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="animate.css">
+
+
+<script>
+	$(document).ready(function(){
+	$("#pop").click(function(){
+	var a= $("#a").val();
+
+if(a>='18'){
+Swal.fire({
+title:'Suceessfully',
+type:"success",
+showConfirmButton:false,
+
+})
+	}
+else if(a>120 ){
+		Swal.fire({
+title:'impossible',
+type:'warning',
+showConfirmButton:false,
+
+})
+}
+
+
+	else{
+		Swal.fire({
+title:'Your Under Age',
+type:'error',
+showConfirmButton:false,
+
+})
+		}	
+	});
+	});
+</script>
+
+<!-- 
+if(a>='18'){
+		alert("Successfully");	
+		}
+		else{
+			alert("Your Under Age")
+		} -->
+
+
+</head>
+<body>
+	<div class="container mt-5">
+<div class="input-group input-group-sm mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Age</span>
+  </div>
+  <input id="a" type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+</div>
+
+<div class="text-center p-2">
+	<button type="Submit" id="pop" class="bg-primary">Submit</button>
+</div>
+</div>
+
+</body>
+</html>

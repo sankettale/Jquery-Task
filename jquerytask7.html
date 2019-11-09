@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task</title>
+
+	<script src="jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+
+<script>
+	$(document).ready(function(){
+  	$("#adidas").click(function(){
+  	// $('img.adidasimg').toggleClass('changeimg');
+	$('img.pumaimg').hide();
+	$('img.woodlandimg').hide();
+		
+});
+  	$("#puma").click(function(){
+	$('img.pumaimg').show();
+	$('img.woodlandimg').hide();
+	$('img.adidasimg').hide();
+	// $('img.pumaimg').toggleClass('changeimg1');
+	
+
+});
+  	$("#all").click(function(){
+  	$('img.adidasimg').show();
+  	$('img.pumaimg').show();
+  	$('img.woodlandimg').show();
+
+});
+});
+
+
+</script>
+</head>
+<body>
+	<style>
+		img{
+			height: 300px;
+			width: 400px; 
+			}
+
+			.adidasimg{
+    content:url("E:/Server/htdocs/jquery/img/Adidas.jpg");
+			}
+
+			.pumaimg{
+    content:url("E:/Server/htdocs/jquery/img/puma.png");
+
+			}
+
+			.woodlandimg{
+    content:url("E:/Server/htdocs/jquery/img/woodland.jpg");
+
+			}
+			.changeimg{
+    content:url("E:/Server/htdocs/jquery/img/Adidas.jpg");
+			}
+
+			.changeimg1{
+    content:url("E:/Server/htdocs/jquery/img/puma.png");
+			}
+			</style>
+		
+
+<div>
+
+			<input type="checkbox" id="all" >All	
+			<input type="checkbox" id="adidas">Adidas
+			<input type="checkbox" id="puma" >Puma 
+				
+		</div>
+					
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-6">
+					
+					<div>
+						<img class="adidasimg">
+					</div>
+							
+					<div>
+						<img class="pumaimg">
+					</div>
+
+					<div>
+						<img class="woodlandimg">
+					</div>
+
+
+				</div>
+				
+						
+							<div class="col-lg-6">
+					
+					<div>
+						<img class="pumaimg">
+					</div>
+								
+					<div>
+						<img class="woodlandimg">
+					</div>
+
+					<div>
+						<img class="adidasimg">
+					</div>
+
+				</div></div></div>
+				
+
+</body>
+</html>

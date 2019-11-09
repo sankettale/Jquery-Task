@@ -1,0 +1,161 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-3.4.1.min.js"></script>
+<!-- <script src="https://kit.fontawesome.com/yourcode.js"></script>  -->
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script>
+	// checkbox
+$(document).ready(function(){
+  $("#accept").click(function(){
+  		if ($('#submitbtn').is(':disabled')) {
+    $("#submitbtn").removeAttr("disabled");
+    } else {
+    		$('#submitbtn').attr('disabled', 'disabled');
+    }
+  });
+});
+
+// blink
+$(document).ready(function(){
+	function blink_text() {
+    $('.blink').fadeOut(500);
+    $('.blink').fadeIn(500);
+}
+setInterval(blink_text, 1000);
+});
+
+
+</script>
+</head>
+<body>
+
+<!-- checkbox -->
+<input id="accept" name="accept" type="checkbox" value="y"/>I accept<br>
+<input id="submitbtn" disabled="disabled" name="Submit" type="submit" value="Submit" />
+
+
+
+<!-- blink -->
+<p> Hello <span class="blink">World</span></p>
+
+
+
+
+<!-- strike -->
+
+
+<script>
+$(document).ready(function(){
+  $("#btn").click(function(){
+    $("#p").val($("#q").val());
+  });
+});
+
+$(document).ready(function(){
+  $(".a1").click(function(){
+    $("#p").toggleClass("cs");
+  });
+  
+});
+
+
+</script>
+
+
+<style >
+	.cs {
+  text-decoration: line-through;
+}
+</style>
+
+<input type="text" name="" id="q">
+<input type="text" name="" id="p">
+<button id="btn">add</button>
+<a href='#' class='a1'><i style='font-size:15px; color:blue' class='fas fa-check-square'></i></a>
+
+
+
+<!-- to do list -->
+
+<script>
+	$(document).ready(function(){
+		$("#add").on("click",function(){
+			var val= $("#work").val();
+			var list= $("<li></li>").text(val);
+			list.append($("<a href='#' class='a' type='button'>yes</a>"));
+  		    $("ol").append(list);
+		});
+		});
+
+	$(document).ready(function(){
+	 $(".a").click(function(){
+	 $(this).find(".a").parent().toggleClass("cs");
+
+				 });
+	});
+</script>
+
+
+
+<style>
+	.a{
+		margin-left: 150px;
+		
+	}
+	.b{
+		margin-left: 150px;
+		
+	}
+.cs {
+  text-decoration: line-through;
+}
+</style>
+
+
+
+	<div class="container-fluid bg-danger pb-3">
+<div id="main" class="text-center">
+	<h1>My to do list</h1>
+	<hr class="w-25 mx-auto pt-2">
+	<input type="text" name="" id="work" class="w-50">
+	<button id="add">Add</button>	
+</div></div>
+
+
+<div class="list">
+	<ol>
+
+	</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+	

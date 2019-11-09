@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>swal</title>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+	<script src="jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="animate.css">
+    <script src="https://cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $(".add-row").click(function(){
+            var name = $("#name").val();
+            var email = $("#email").val();
+               var markup = "<tr><td>" + name + "</td><td>" + email + "</td></tr>";
+            $("table tbody").append(markup);
+        });
+         });
+
+
+	
+		$(document).ready(function(){
+  $("#btn").click(function(){
+  	$('.table').table2excel({
+exclude:"noExl",
+name:"My Bio",
+filename:"Biodata"
+
+  	});
+  	});
+  	});
+  </script>
+
+</head>
+<body>
+<body>
+    	<div class="container">
+    		<div class="text-center mb-3 mt-5">
+        <input type="text" id="name" placeholder="Name">
+        <input type="email" id="email" placeholder="Email Address">
+        <button class="btn btn-primary btn-sm add-row"> Add</button>
+        <button id="btn" class="btn btn-success btn-sm"> Export</button>
+    		</div>
+    <table class="table table-bordered">
+
+        <thead class="noExcel">
+            <tr>
+ 				<th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>

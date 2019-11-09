@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task</title>
+	<script src="jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+
+<script>
+    $(document).ready(function() {
+// click adidas
+        $(".adidas").click(function() {           
+
+            if($(".adidas").is(':checked'))
+             { 
+             	$('.adidasimg').show();
+                $('.pumaimg').hide();
+                $('.woodlandimg').hide();
+             } 
+                                 
+            else 
+             {
+                $('.adidasimg').show();
+                $('.pumaimg').show();
+                $('.woodlandimg').show();
+            }
+        });
+
+
+//click both
+			
+		$(".adidas").click(function(){
+		 $(".puma").click(function(){
+			if($('.adidas , .puma').is(':checked'))
+			 {
+				$('.adidasimg').hide();
+				$('.pumaimg').show();
+			 }
+
+			else
+			{
+				$('.adidasimg').show();
+                $('.pumaimg').show();
+                $('.woodlandimg').show();
+			}
+
+		 });
+		});
+		
+
+
+//click both
+			
+		$(".puma").click(function(){	
+		  $(".adidas").click(function(){		 
+			if($('.adidas , .puma').is(':checked'))
+			 {
+				$('.adidasimg').show();
+				$('.pumaimg').show();
+			 }
+
+			else
+			{
+				$('.adidasimg').show();
+                $('.pumaimg').show();
+                $('.woodlandimg').show();
+			}
+
+		 });
+		});
+         
+// click puma
+        $(".puma").click(function() {
+            
+            if($(".puma").is(':checked'))
+             { 
+             	$('.pumaimg').show();
+             	$('.adidasimg').hide();
+             	$('.woodlandimg').hide();
+                
+             } 
+            else
+             {
+               	$('.pumaimg').hide();
+             }
+        });       
+       
+// click all
+    	$(".all").click(function(){
+
+    		if($(".all").is(':checked'))
+    		 { 
+                $('.adidasimg').show();
+                $('.pumaimg').show();
+                $('.woodlandimg').show();
+             } 
+        });
+    });
+
+       
+</script>
+
+<style>
+	/*.adidasimg{
+		display: none;
+	}
+	
+	.pumaimg{
+		display: none;
+	}
+*/
+img{
+	height: 200px;
+	width: 300px;
+}
+			
+
+			
+</style>
+</head>
+<body>
+
+
+<input class="adidas" type="checkbox">Adidas
+<input type="checkbox" class="puma" >Puma 
+<input type="checkbox" class="all" >All
+					
+
+			<div class="container">
+						<div class="row">
+							<div class="col-lg-6">
+					<div>
+						<img class="adidasimg" src="E:/Server/htdocs/jquery/img/Adidas.jpg">
+					</div>
+
+
+					<div>
+						<img class="pumaimg" src="E:/Server/htdocs/jquery/img/puma.png">
+					</div>
+				
+
+					<div>
+						<img class="woodlandimg" src="E:/Server/htdocs/jquery/img/woodland.jpg">
+					</div>
+				</div>
+
+							<div class="col-lg-6">
+
+					<div>
+						<img class="adidasimg" src="E:/Server/htdocs/jquery/img/Adidas.jpg">
+					</div>
+
+					<div>
+						<img class="pumaimg" src="E:/Server/htdocs/jquery/img/puma.png">
+					</div>
+
+					<div>
+						<img class="woodlandimg" src="E:/Server/htdocs/jquery/img/woodland.jpg">
+					</div>
+				</div>
+
+
+</div></div></div>
+
+
+</body>
+</html>
+ 

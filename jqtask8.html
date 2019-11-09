@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo image</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- <script>
+$(document).ready(function(){
+  $("#link_checkbox").click(function() {
+$('#picture').attr('src', 'E:/Server/htdocs/bala.jpg');
+});
+});
+</script> -->
+<script>
+$(document).ready(function(){
+  $("#link_checkbox").click(function() {
+$('img.expand').toggleClass('collapse');
+});
+});
+</script>
+	<style>
+.expand{
+    content:url("E:/Server/htdocs/Bootstrap_Task/task1/india.gif");
+}
+.collapse{
+    content:url("E:/Server/htdocs/bala.jpg");
+}
+img{
+	height: 300px;
+	width: 400px;
+}
+</style>
+</head>
+<body>
+
+
+
+<!-- <div class="first_checkbox">
+  <span>
+        <input type="checkbox" name="link_checkbox" id="link_checkbox" class="link_checkbox" value="link_checkbox" accesskey="k" />
+    	</span>
+  <span class="first_checkbox_lbl">
+    	<label for="link_checkbox">Lin<u>k</u> to file</label>
+    	</span>
+</div>
+<span class="result_img">
+      <img id="picture" src="E:\Server\htdocs\Bootstrap_Task\task1\india.gif" alt="result.png" />
+    </span>
+<div class="result_text"></div> -->
+
+
+
+<img class="expand">
+<span>
+        <input type="checkbox" name="link_checkbox" id="link_checkbox" class="link_checkbox" value="link_checkbox" accesskey="k" />
+    	</span>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>validation</title>
+	
+  
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="jquery-3.4.1.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<!-- sweetalert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+</head>
+
+
+<body>
+
+<div class="container">
+	<h1 class="text-center text-warning">Validation Form</h1>
+<form>
+	
+	<div class="form-group">
+    <label for="name">Full Name:</label>
+    <input type="text" class="form-control" id="fname1" name="fname">
+    <h6 id="fnamecheck"> </h6>
+  </div>
+
+  <div class="form-group">
+    <label for="mob">Mobile No.:</label>
+    <input type="number" class="form-control" id="mob">
+    <h6 id="mobcheck"> </h6>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email">
+    <h6 id="mailcheck"> </h6>
+  </div>
+
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd">
+    <h6 id="passcheck"> </h6>
+  </div>
+
+  <div class="form-group">
+    <label for="conpass">Confirm Password:</label>
+    <input type="password" class="form-control" id="conpwd">
+    <h6 id="conpasscheck"> </h6>
+  </div>
+
+  <div class="checkbox">
+    <label><input type="checkbox" id="accept">I accept</label>
+  </div>
+  <button type="submit" disabled="disabled" class="btn btn-default sub">Submit</button>
+</form>
+</div>
+
+
+	<script>
+		$(document).ready(function(){
+
+		$('#fnamecheck').hide();
+		$('#mobcheck').hide();
+		$('#mailcheck').hide();
+		$('#passcheck').hide();
+		$('#conpasscheck').hide();
+
+		var fname_err=true; 
+		var mob_err=true; 
+		var mail_err=true; 
+		var pass_err=true; 
+		var conpass_err=true;
+
+
+		// fullname
+
+		$('#fname1').keyup(function(){
+			fname_check();
+		});
+
+		function fname_check(){
+		var fname_val=$('#fname1').val();
+		 var letters = /^[A-Za-z]+$/;
+			if(fname_val.length==''){
+				$('#fnamecheck').show();
+				$('#fnamecheck').html("**please fill the full name");
+				$('#fnamecheck').focus();
+				$('#fnamecheck').css("color","red");
+				fname_err=false;
+				return false;
+			}
+			else{
+				$('#fnamecheck').hide();
+			}
+
+			if (!fname_val.match(letters) || fname_val.length == 0) {
+				$('#fnamecheck').show();
+				$('#fnamecheck').html("**please fill the Alphbets");
+				$('#fnamecheck').focus();
+				$('#fnamecheck').css("color","red");
+				fname_err=false;
+				return false;
+			}
+			else{
+				$('#fnamecheck').hide();
+			}
+
+			if((fname_val.length< 3)|| (fname_val.length>50) ){
+				$('#fnamecheck').show();
+				$('#fnamecheck').html("**full name length must be 3 to 50 ");
+				$('#fnamecheck').focus();
+				$('#fnamecheck').css("color","red");
+				fname_err=false;
+				return false;
+			}
+			else{
+				$('#fnamecheck').hide();
+			}
+		}
+
+
+		// mobno
+		$('#mob').keyup(function(){
+			mob_check();
+		});
+
+		function mob_check(){
+		var mob_val=$('#mob').val();
+
+			if(mob_val.length==''){
+				$('#mobcheck').show();
+				$('#mobcheck').html("**please fill the mobile No.");
+				$('#mobcheck').focus();
+				$('#mobcheck').css("color","red");
+				mob_err=false;
+				return false;
+			}
+			else{
+				$('#mobcheck').hide();
+			}
+
+
+			if((mob_val.length>10)||(mob_val.length<10)){
+				$('#mobcheck').show();
+				$('#mobcheck').html("**mobile no. must be 10 digit");
+				$('#mobcheck').focus();
+				$('#mobcheck').css("color","red");
+				mob_err=false;
+				return false;
+			}
+			else{
+				$('#mobcheck').hide();
+			}
+		}
+
+		// email
+		$('#email').keyup(function(){
+			mail_check();
+		});
+
+		function mail_check(){
+		var mail_val=$('#email').val();
+
+			if(mail_val.length==''){
+				$('#mailcheck').show();
+				$('#mailcheck').html("**please fill the Email");
+				$('#mailcheck').focus();
+				$('#mailcheck').css("color","red");
+				mail_err=false;
+				return false;
+			}
+			else{
+				$('#mailcheck').hide();
+			}
+		}
+
+
+		// password
+
+		$('#pwd').keyup(function(){
+			pass_check();
+		});
+
+		function pass_check(){
+		var pass_val=$('#pwd').val();
+
+			if(pass_val.length==''){
+				$('#passcheck').show();
+				$('#passcheck').html("**please fill the password");
+				$('#passcheck').focus();
+				$('#passcheck').css("color","red");
+				pass_err=false;
+				return false;
+			}
+			else{
+				$('#passcheck').hide();
+			}
+
+
+			if((pass_val.length< 8)|| (pass_val.length>20) ){
+				$('#passcheck').show();
+				$('#passcheck').html("**password length must be 8");
+				$('#passcheck').focus();
+				$('#passcheck').css("color","red");
+				pass_err=false;
+				return false;
+			}
+			else{
+				$('#passcheck').hide();
+			}
+		}
+
+
+		// conpassword
+
+		$('#conpwd').keyup(function(){
+			conpass_check();
+		});
+
+		function conpass_check(){
+		var conpass_val=$('#conpwd').val();
+		var pass_val=$('#pwd').val();
+
+		if(pass_val != conpass_val){
+			$('#conpasscheck').show();
+				$('#conpasscheck').html("**password are not Matching");
+				$('#conpasscheck').focus();
+				$('#conpasscheck').css("color","red");
+				conpass_err=false;
+				return false;
+			}
+			else{
+				$('#conpasscheck').hide();
+			}
+		}
+
+// submit
+		$('.sub').click(function(){
+
+		fname_err=true; 
+		mob_err=true; 
+		mail_err=true; 
+		pass_err=true; 
+		conpass_err=true;
+		
+		fname_check();
+		mob_check();
+		mail_check();
+		pass_check();
+		conpass_check();
+
+		if((fname_err==true) && (mob_err==true) && (mail_err==true) 
+		&&(pass_err==true) && (conpass_err==true))
+		{
+			return true;
+		}
+		else{
+			return false;
+		}
+
+  		});
+
+		$("#accept").click(function(){
+  		if ($('.sub').is(':disabled')) {
+    $(".sub").removeAttr("disabled");
+    } else {
+    		$('.sub').attr('disabled', 'disabled');
+    }
+});
+		});
+	</script>
+
+</body>
+</html>

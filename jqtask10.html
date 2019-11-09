@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jq10</title>
+
+  <script src="jquery-3.4.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+  
+  <script>
+    $(document).ready(function(){
+      $("#submit").click(function(){
+        var fname = $("#fname").val();
+        var lname = $("#lname").val();
+        var email = $("#email").val();
+        if (fname==""){
+          alert("Enter Name")
+        }
+        else if( lname==""){
+          alert("Enter last name")
+        }
+        else{
+          alert("enter email")
+        }
+      });
+    });
+  </script>
+
+
+
+</head>
+<body>
+  <div class="text-center">
+  <h2>Validation form</h2>
+      <form id="form" method="post" action="">
+         First name:<br>
+         <input type="text" name="firstname" id="fname">
+         <br>
+         Last name:<br>
+         <input type="text" name="lastname" id="lname">
+         <br>
+         Email:<br>
+         <input type="email" name="u_email" id="email">
+         <br><br>
+         <input type="submit" value="Submit" id="submit">
+      </form>
+    </div>
+</body>
+</html>

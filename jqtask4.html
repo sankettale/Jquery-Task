@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script><script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script src="jquery-3.4.1.min.js"></script>
+<script src="https://kit.fontawesome.com/yourcode.js"></script> 
+
+
+<script>
+	$(document).ready(function(){
+		$("#add").on("click",function(){
+			var val= $("#work").val();
+			var list= $("<li></li>").text(val);
+
+			// check
+
+			list.append($("<a href='#' class='a'><i style='font-size:15px; color:blue' class='fas fa-check-square'></i></a>"));
+				$("ol").append(list);
+				$(".a").on('click',function(){
+				$(this).parent().html('<s>'+$("#work").val()+'</s>').css("background-color", "lightgray")
+				 // $(".a").toggleClass("cs");
+
+				});
+
+				// remove
+
+		// 	list.append($("<a href='#' class='a'><i style='font-size:15px; color:red' class='fas'>&#xf2ed;</i></a>"));
+		// 			$("ol").append(list);
+		// 			$(".a").on("click",function(){
+		// 				$(this).parent().remove()
+
+'<li>'+$("#work").val()+'</li>'
+		// });
+				
+		});
+		});
+</script>
+
+<style>
+	.a{
+		margin-left: 150px;
+		
+	}
+.cs {
+  text-decoration: line-through;
+}
+	
+	
+</style>
+</head>
+<body>
+
+
+	<div class="container-fluid bg-danger pb-3">
+<div id="main" class="text-center">
+	<h1>My to do list</h1>
+	<hr class="w-25 mx-auto pt-2">
+	<input type="text" name="" id="work" class="w-50">
+	<button id="add">Add</button>	
+</div></div>
+
+
+<div id="list">
+	<ol>
+
+	</ol>
+</div>
+
+</body>
+</html>
+
